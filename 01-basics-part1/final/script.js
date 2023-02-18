@@ -25,7 +25,6 @@ let job1 = "programmer";
 let job2 = "teacher";
 
 console.log(myFirstJob);
-*/
 
 let javascriptIsFun = true;
 console.log(javascriptIsFun);
@@ -46,3 +45,17 @@ year = 1991;
 console.log(typeof year);
 
 console.log(typeof null); // object
+*/
+
+let age = 30;
+age = 31;
+
+const birthYear = 1990;
+// birthYear = 1991; //  Uncaught TypeError: Assignment to constant variable.
+// const job; // Uncaught SyntaxError: Missing initializer in const declaration
+
+var job = "programmer";
+job = "teacher";
+
+lastName = "Dubceac";
+console.log(lastName);
