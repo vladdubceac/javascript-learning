@@ -207,6 +207,7 @@ HINT: Use an if/else statement 😉
 GOOD LUCK 😀
 */
 
+/*
 // SOLUTION 2
 // TEST DATA 1
 let johnMass = 92;
@@ -230,3 +231,27 @@ if (markBMI > johnBMI) {
 } else {
   console.log(`Mark and John have the same BMI (${markBMI}, ${johnBMI})`);
 }
+*/
+
+/*
+// Type conversion
+const inputYear = "1990";
+console.log(Number(inputYear), inputYear);
+console.log(Number(inputYear) + 18);
+
+console.log(Number("Vlad"));
+console.log(typeof NaN);
+
+console.log(String(23), 23);
+
+// type coercion
+console.log("I am " + 33 + " years old");
+console.log("23" - "10" - 3); // 10
+console.log("23" + "10" + 3);
+console.log("23" * "2");
+console.log("23" / "2");
+
+let n = "1" + 1;
+n = n - 1;
+console.log(n);
+*/
