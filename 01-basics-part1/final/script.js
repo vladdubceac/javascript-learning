@@ -145,6 +145,7 @@ console.log(markBMI, johnBMI);
 console.log("Mark higher BMI = " + markHigherBMI); // TEST DATA 1 - true ; TEST DATA 2 - false
 */
 
+/*
 const firstName = "Vlad";
 const job = "software developer";
 const birthYear = 1990;
@@ -168,3 +169,24 @@ console.log(`String
 with
 multiple
 lines`);
+*/
+
+const age = 15;
+
+if (age >= 18) {
+  console.log(`Sarah can start driving license 🚗`);
+} else {
+  const yearsLeft = 18 - age;
+  console.log(`Sarah is too young. Wait another ${yearsLeft} years :)`);
+}
+
+const birthYear = 1990;
+let century;
+if (birthYear <= 2000 && birthYear > 1900) {
+  century = 20;
+} else if (birthYear > 2000) {
+  century = 21;
+} else {
+  century = Math.ceil(birthYear / 100);
+}
+console.log(century);
