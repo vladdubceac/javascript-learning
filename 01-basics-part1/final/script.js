@@ -382,17 +382,17 @@ console.log(
   `Dolphins score = ${dolphinsAverage}, Koalas score = ${koalasAverage}`
 );
 
-if (dolphinsAverage > koalasAverage) {
-  console.log(
-    `Dolphins win with the score ${dolphinsAverage} vs. ${koalasAverage}`
-  );
-} else if (dolphinsAverage < koalasAverage) {
-  console.log(
-    `Koalas win with the score ${koalasAverage} vs. ${dolphinsAverage}`
-  );
-} else if (dolphinsAverage === koalasAverage) {
-  console.log(`Draw ! ${dolphinsAverage} vs. ${koalasAverage}`);
-}
+// if (dolphinsAverage > koalasAverage) {
+//   console.log(
+//     `Dolphins win with the score ${dolphinsAverage} vs. ${koalasAverage}`
+//   );
+// } else if (dolphinsAverage < koalasAverage) {
+//   console.log(
+//     `Koalas win with the score ${koalasAverage} vs. ${dolphinsAverage}`
+//   );
+// } else if (dolphinsAverage === koalasAverage) {
+//   console.log(`Draw ! ${dolphinsAverage} vs. ${koalasAverage}`);
+// }
 
 // BONUS 1 + BONUS 2
 const isDolphinsScoreValid = dolphinsAverage >= 100;
