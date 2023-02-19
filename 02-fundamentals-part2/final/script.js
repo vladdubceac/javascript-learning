@@ -133,7 +133,8 @@ HINT: To check if number A is at least double number B, check for A >= 2 * B. Ap
 GOOD LUCK 😀
 */
 
-// TEST DATA 1
+/*
+//// TEST DATA 1
 // const dolphinsScore1 = 44;
 // const dolphinsScore2 = 23;
 // const dolphinsScore3 = 71;
@@ -141,7 +142,7 @@ GOOD LUCK 😀
 // const koalasScore2 = 54;
 // const koalasScore3 = 49;
 
-// TEST DATA 2
+//// TEST DATA 2
 const dolphinsScore1 = 85;
 const dolphinsScore2 = 54;
 const dolphinsScore3 = 41;
@@ -174,3 +175,44 @@ function checkWinner(avgDolphins, avgKoalas) {
 }
 
 checkWinner(dolphinsAverage, koalasAverage);
+*/
+
+const friend1 = "Michael";
+const friend2 = "Steven";
+const friend3 = "Peter";
+
+const friends = ["Michael", "Steven", "Peter"];
+console.log(friends);
+
+const y = new Array(1990, 1984, 2008, 2020);
+
+console.log(friends[0]);
+console.log(friends[2]);
+
+console.log(friends.length);
+console.log(friends[friends.length - 1]);
+
+friends[2] = "Jay";
+console.log(friends);
+
+const firstName = "Vlad";
+const jonas = [firstName, "Dubceac", 2023 - 1990, "programmer", friends];
+console.log(jonas);
+console.log(jonas.length);
+
+// Exercise
+const calcAge = function (birthYear) {
+  return 2023 - birthYear;
+};
+const years = [1990, 1967, 2002, 2010, 2018, 2020];
+
+const age1 = calcAge(years[0]);
+const age2 = calcAge(years[1]);
+const age3 = calcAge(years[years.length - 1]);
+console.log(age1, age2, age3);
+
+const ages = [
+  calcAge(years[0]),
+  calcAge(years[1]),
+  calcAge(years[years.length - 1]),
+];
