@@ -351,6 +351,7 @@ TEST DATA BONUS 2: Dolphins score 97, 112 and 101. Koalas score 109, 95 and 106
 GOOD LUCK 😀
 */
 
+/*
 // SOLUTION to Challenge 3
 //// TEST DATA
 // const dolphinsScore1 = 96;
@@ -415,4 +416,45 @@ if (dolphinsAverage > koalasAverage && isDolphinsScoreValid) {
   );
 } else {
   console.log("Nobody wins the tropy");
+}
+*/
+
+const day = "monday";
+
+switch (day) {
+  case "monday":
+    console.log("Plan week");
+    break;
+  case "tuesday":
+    console.log("Prepare for commit");
+    break;
+  case "wednesday":
+  case "thursday":
+    console.log("Do commit");
+    console.log("Write code");
+    break;
+  case "friday":
+    console.log("Complete tasks");
+    break;
+  case "saturday":
+  case "sunday":
+    console.log("Enjoy the weekend");
+    break;
+  default:
+    console.log("Not a valid day!");
+}
+
+if (day === "monday") {
+  console.log("Plan week");
+} else if (day === "tuesday") {
+  console.log("Prepare for commit");
+} else if (day === "wednesday" || day === "thursday") {
+  console.log("Do commit");
+  console.log("Write code");
+} else if (day === "friday") {
+  console.log("Complete tasks");
+} else if (day === "saturday" || day === "sunday") {
+  console.log("Enjoy the weekend");
+} else {
+  console.log("Not a valid day!");
 }
