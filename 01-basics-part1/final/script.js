@@ -419,6 +419,7 @@ if (dolphinsAverage > koalasAverage && isDolphinsScoreValid) {
 }
 */
 
+/*
 const day = "monday";
 
 switch (day) {
@@ -458,3 +459,11 @@ if (day === "monday") {
 } else {
   console.log("Not a valid day!");
 }
+*/
+
+if (23 > 10) {
+  const str = "23 is bigger";
+}
+
+const me = "Vlad";
+console.log(`I'm ${2023 - 1990} years old ${me}`);
