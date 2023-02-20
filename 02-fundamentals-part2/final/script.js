@@ -289,6 +289,7 @@ console.log(`Tips = `, tips);
 console.log(`Totals = `, totals);
 */
 
+/*
 const vladArray = [
   "Vlad",
   "Dubceac",
@@ -304,3 +305,42 @@ const vlad = {
   job: "programmer",
   friends: ["Andrei", "Petru", "Valeriu", "Vadim"],
 };
+*/
+
+const vlad = {
+  firstName: "Vlad",
+  lastName: "Dubceac",
+  age: 2023 - 1990,
+  job: "programmer",
+  friends: ["Andrei", "Petru", "Valeriu", "Vadim"],
+};
+console.log(vlad);
+
+console.log(vlad.lastName);
+console.log(vlad["lastName"]);
+
+const nameKey = "Name";
+console.log(vlad["first" + nameKey]);
+console.log(vlad["last" + nameKey]);
+
+const interestedIn = prompt(
+  "What do you want to know about Vlad? Choose between firstName, lastName, job and friends"
+);
+
+if (vlad[interestedIn]) {
+  console.log(vlad[interestedIn]);
+} else {
+  console.log(
+    "Wrong request! Choose between firstName, lastName, job and friends"
+  );
+}
+
+vlad.location = "Moldova";
+vlad["twitter"] = "@vladdubceac";
+console.log(vlad);
+
+// Challenge
+// "Vlad has 4 friends, and his best friend is Andrei"
+console.log(
+  `${vlad.firstName} has ${vlad.friends.length} friends, and his best friend is ${vlad.friends[0]}`
+);
