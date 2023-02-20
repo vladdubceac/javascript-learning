@@ -270,6 +270,7 @@ HINT: Remember that an array needs a value in each position, and that value can 
 GOOD LUCK 😀
 */
 
+/*
 const calcTip = function (billValue) {
   if (billValue >= 50 && billValue <= 300) {
     return billValue * 0.15;
@@ -286,3 +287,20 @@ const totals = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]];
 console.log(`Bills = `, bills);
 console.log(`Tips = `, tips);
 console.log(`Totals = `, totals);
+*/
+
+const vladArray = [
+  "Vlad",
+  "Dubceac",
+  2023 - 1990,
+  "programmer",
+  ["Andrew", "Val", "Peter"],
+];
+
+const vlad = {
+  firstName: "Vlad",
+  lastName: "Dubceac",
+  age: 2023 - 1990,
+  job: "programmer",
+  friends: ["Andrei", "Petru", "Valeriu", "Vadim"],
+};
