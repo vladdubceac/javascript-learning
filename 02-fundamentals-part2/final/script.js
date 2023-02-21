@@ -307,6 +307,7 @@ const vlad = {
 };
 */
 
+/*
 const vlad = {
   firstName: "Vlad",
   lastName: "Dubceac",
@@ -344,3 +345,43 @@ console.log(vlad);
 console.log(
   `${vlad.firstName} has ${vlad.friends.length} friends, and his best friend is ${vlad.friends[0]}`
 );
+*/
+
+const vlad = {
+  firstName: "Vlad",
+  lastName: "Dubceac",
+  birthYear: 1990,
+  job: "programmer",
+  friends: ["Andrei", "Petru", "Valeriu", "Vadim"],
+  hasDriversLicense: true,
+  // calcAge: function (birthYear) {
+  //   return 2023 - birthYear;
+  // },
+
+  // calcAge: function () {
+  //   console.log(this);
+  //   return 2023 - this.birthYear;
+  // },
+
+  calcAge: function () {
+    this.age = 2023 - this.birthYear;
+    return this.age;
+  },
+  getSummary: function () {
+    return;
+    `${this.firstName} is a ${this.calcAge()}-year old ${this.job}, and has ${
+      this.hasDriversLicense ? "a" : "no"
+    } drivers license`;
+  },
+};
+
+console.log(vlad.calcAge());
+
+console.log(vlad.age);
+console.log(vlad.age);
+console.log(vlad.age);
+
+// Challenge
+// "Jonas is a 46-year old teacher, and he has no driver's license"
+
+console.log(vlad.getSummary());
