@@ -445,6 +445,7 @@ if (john.calcBMI() > mark.calcBMI()) {
 }
 */
 
+/*
 const vladArray = [
   "Vlad",
   "Dubceac",
@@ -488,4 +489,25 @@ console.log("--- BREAK WITH NUMBER ---");
 for (let i = 0; i < vladArray.length; i++) {
   if (typeof vladArray[i] === "number") break;
   console.log(vladArray[i], typeof vladArray[i]);
+}
+*/
+
+const vlad = [
+  "Vlad",
+  "Dubceac",
+  2023 - 1990,
+  "programmer",
+  ["Andrei", "Valeriu", "Vadim"],
+  true,
+];
+
+for (let i = vlad.length - 1; i >= 0; i--) {
+  console.log(i, vlad[i], typeof vlad[i]);
+}
+
+for (let exercise = 1; exercise < 4; exercise++) {
+  console.log(`--- Starting exercise ${exercise} ---`);
+  for (let rep = 1; rep < 6; rep++) {
+    console.log(`Exercise ${exercise} , repetition ${rep}`);
+  }
 }
