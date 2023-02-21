@@ -440,6 +440,52 @@ if (john.calcBMI() > mark.calcBMI()) {
 */
 
 // for loop keeps running while condition is TRUE
-for (let rep = 1; rep <= 10; rep++) {
+/*for (let rep = 1; rep <= 10; rep++) {
   console.log(`Lifting weights repetition ${rep}`);
+}
+*/
+
+const vladArray = [
+  "Vlad",
+  "Dubceac",
+  2023 - 1990,
+  "programmer",
+  ["Andrei", "Valeriu", "Vadim"],
+  true,
+];
+
+const types = [];
+
+for (let i = 0; i < vladArray.length; i++) {
+  // Reading from vladArray
+  console.log(vladArray[i], typeof vladArray[i]);
+
+  // Filling types array
+  // types[i] = typeof vladArray[i];
+  // types[i] = typeof vladArray[i];
+  types.push(typeof vladArray[i]);
+}
+
+console.log(types);
+
+const years = [1991, 2007, 1969, 2020];
+const ages = [];
+
+for (let i = 0; i < years.length; i++) {
+  ages.push(2023 - years[i]);
+}
+
+console.log(ages);
+
+// continue and break
+console.log("--- ONLY STRINGS ---");
+for (let i = 0; i < vladArray.length; i++) {
+  if (typeof vladArray[i] !== "string") continue;
+  console.log(vladArray[i], typeof vladArray[i]);
+}
+
+console.log("--- BREAK WITH NUMBER ---");
+for (let i = 0; i < vladArray.length; i++) {
+  if (typeof vladArray[i] === "number") break;
+  console.log(vladArray[i], typeof vladArray[i]);
 }
