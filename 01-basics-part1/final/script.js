@@ -48,6 +48,28 @@ console.log(typeof null); // object
 */
 
 /*
+let javascriptIsFun = true;
+console.log(javascriptIsFun);
+
+// console.log(typeof true);
+console.log(typeof javascriptIsFun);
+// console.log(typeof 23);
+// console.log(typeof "Jonas");
+
+javascriptIsFun = "YES!";
+console.log(typeof javascriptIsFun);
+
+let year;
+console.log(year);
+console.log(typeof year);
+
+year = 1991;
+console.log(typeof year);
+
+console.log(typeof null);
+*/
+
+/*
 let age = 30;
 age = 31;
 
@@ -64,7 +86,7 @@ console.log(lastName);
 
 /*
 // Math operators
-const now = 2023;
+const now = new Date().getFullYear();
 const ageVlad = now - 1990;
 const ageSarah = now - 2018;
 console.log(ageVlad, ageSarah);
@@ -96,7 +118,7 @@ console.log(now - 1990 > now - 2018);
 */
 
 /*
-const now = 2023;
+const now = new Date().getFullYear();
 const ageVlad = now - 1990;
 const ageSarah = now - 2018;
 console.log(now - 1990 > now - 2018);
@@ -149,7 +171,7 @@ console.log("Mark higher BMI = " + markHigherBMI); // TEST DATA 1 - true ; TEST 
 const firstName = "Vlad";
 const job = "software developer";
 const birthYear = 1990;
-const year = 2023;
+const year = new Date().getFullYear();
 
 const vlad =
   "I'm " + firstName + ", a " + (year - birthYear) + " years old " + job + "! ";
@@ -251,8 +273,8 @@ console.log("23" + "10" + 3);
 console.log("23" * "2");
 console.log("23" / "2");
 
-let n = "1" + 1;
-n = n - 1;
+let n = "1" + 1; // 11
+n = n - 1; // 10
 console.log(n);
 */
 
@@ -316,11 +338,13 @@ console.log(hasDriversLicense && hasGoodVision);
 console.log(hasDriversLicense || hasGoodVision);
 console.log(!hasDriversLicense);
 
-// if (hasDriversLicense && hasGoodVision) {
-//   console.log(`Sarah is able to drive`);
-// } else {
-//   console.log(`Someone else should drive...`);
-// }
+const shouldDrive = hasDriversLicense && hasGoodVision;
+
+if (shouldDrive) {
+  console.log("Sarah is able to drive!");
+} else {
+  console.log("Someone else should drive ...");
+}
 
 const isTired = false; // C
 console.log(hasDriversLicense && hasGoodVision && isTired);
@@ -424,22 +448,22 @@ const day = "monday";
 
 switch (day) {
   case "monday":
-    console.log("Plan week");
+    console.log("Plan course structure");
+    console.log("Go to coding meetup");
     break;
   case "tuesday":
-    console.log("Prepare for commit");
+    console.log("Prepare theory videos");
     break;
   case "wednesday":
   case "thursday":
-    console.log("Do commit");
-    console.log("Write code");
+    console.log("Write code examples");
     break;
   case "friday":
-    console.log("Complete tasks");
+    console.log("Record videos");
     break;
   case "saturday":
   case "sunday":
-    console.log("Enjoy the weekend");
+    console.log("Enjoy the weekend :D");
     break;
   default:
     console.log("Not a valid day!");
@@ -462,6 +486,10 @@ if (day === "monday") {
 */
 
 /*
+3 + 4
+1991
+true && false && !false
+
 if (23 > 10) {
   const str = "23 is bigger";
 }
@@ -470,11 +498,10 @@ const me = "Vlad";
 console.log(`I'm ${2023 - 1990} years old ${me}`);
 */
 
-/*
 const age = 23;
-// age >= 18
-//   ? console.log("I like to drink wine")
-//   : console.log("I like to drink water");
+age >= 18
+  ? console.log("I like to drink wine")
+  : console.log("I like to drink water");
 
 const drink = age >= 18 ? "wine" : "water";
 console.log(drink);
@@ -488,7 +515,6 @@ if (age >= 18) {
 console.log(drink2);
 
 console.log(`I like to drink ${age >= 18 ? "wine" : "water"}`);
-*/
 
 ////////////////////////////////////
 // Coding Challenge #4

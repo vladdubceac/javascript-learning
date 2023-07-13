@@ -1,4 +1,5 @@
 "use strict";
+
 /*
 let hasDriversLicense = false;
 const passTest = true;
@@ -43,7 +44,7 @@ console.log(num, typeof num);
 /*
 // Function declaration
 function calcAge1(birthYear) {
-  return 2023 - birthYear;
+  return new Date().getFullYear() - birthYear;
 }
 const age1 = calcAge1(1990);
 
@@ -58,12 +59,12 @@ console.log(age1, age2);
 
 /*
 // Arrow function
-const calcAge3 = (birthYear) => 2023 - birthYear;
+const calcAge3 = (birthYear) => new Date().getFullYear() - birthYear;
 const age3 = calcAge3(1990);
 console.log(age3);
 
 const yearsUntilRetirement = (birthYear, firstName) => {
-  const age = 2023 - birthYear;
+  const age = new Date().getFullYear() - birthYear;
   const retirement = 63 - age;
   //   return retirement;
   return `${firstName} retires in ${retirement} years.`;
@@ -91,7 +92,7 @@ console.log(fruitProcessor(2, 3));
 
 /*
 const calcAge = function (birthYear) {
-  return 2023 - birthYear;
+  return new Date().getFullYear() - birthYear;
 };
 
 const yearsUntilRetirement = function (birthYear, firstName) {
@@ -107,7 +108,7 @@ const yearsUntilRetirement = function (birthYear, firstName) {
 };
 
 console.log(yearsUntilRetirement(1990, "Vlad"));
-console.log(yearsUntilRetirement(1950, "Mike"));
+console.log(yearsUntilRetirement(1970, "Mike"));
 */
 
 ///////////////////////////////////////
@@ -197,13 +198,13 @@ friends[2] = "Jay";
 console.log(friends);
 
 const firstName = "Vlad";
-const jonas = [firstName, "Dubceac", 2023 - 1990, "programmer", friends];
-console.log(jonas);
-console.log(jonas.length);
+const vlad = [firstName, "Dubceac", 2023 - 1990, "programmer", friends];
+console.log(vlad);
+console.log(vlad.length);
 
 // Exercise
 const calcAge = function (birthYear) {
-  return 2023 - birthYear;
+  return new Date().getFullYear() - birthYear;
 };
 const years = [1990, 1967, 2002, 2010, 2018, 2020];
 
@@ -293,7 +294,7 @@ console.log(`Totals = `, totals);
 const vladArray = [
   "Vlad",
   "Dubceac",
-  2023 - 1990,
+  new Date().getFullYear() - 1990,
   "programmer",
   ["Andrew", "Val", "Peter"],
 ];
@@ -301,7 +302,7 @@ const vladArray = [
 const vlad = {
   firstName: "Vlad",
   lastName: "Dubceac",
-  age: 2023 - 1990,
+  age: new Date().getFullYear() - 1990,
   job: "programmer",
   friends: ["Andrei", "Petru", "Valeriu", "Vadim"],
 };
@@ -311,7 +312,7 @@ const vlad = {
 const vlad = {
   firstName: "Vlad",
   lastName: "Dubceac",
-  age: 2023 - 1990,
+  age: new Date().getFullYear() - 1990,
   job: "programmer",
   friends: ["Andrei", "Petru", "Valeriu", "Vadim"],
 };
@@ -356,23 +357,22 @@ const vlad = {
   friends: ["Andrei", "Petru", "Valeriu", "Vadim"],
   hasDriversLicense: true,
   // calcAge: function (birthYear) {
-  //   return 2023 - birthYear;
+  //   return new Date().getFullYear() - birthYear;
   // },
 
   // calcAge: function () {
   //   console.log(this);
-  //   return 2023 - this.birthYear;
+  //   return new Date().getFullYear() - this.birthYear;
   // },
 
   calcAge: function () {
-    this.age = 2023 - this.birthYear;
+    this.age = new Date().getFullYear() - this.birthYear;
     return this.age;
   },
   getSummary: function () {
-    return;
-    `${this.firstName} is a ${this.calcAge()}-year old ${this.job}, and has ${
-      this.hasDriversLicense ? "a" : "no"
-    } drivers license`;
+    return `${this.firstName} is a ${this.calcAge()}-year old ${
+      this.job
+    }, and has ${this.hasDriversLicense ? "a" : "no"} drivers license`;
   },
 };
 
@@ -387,7 +387,6 @@ console.log(vlad.age);
 
 console.log(vlad.getSummary());
 */
-
 ///////////////////////////////////////
 // Coding Challenge #3
 
@@ -440,7 +439,8 @@ if (john.calcBMI() > mark.calcBMI()) {
 */
 
 // for loop keeps running while condition is TRUE
-/*for (let rep = 1; rep <= 10; rep++) {
+/*
+for (let rep = 1; rep <= 10; rep++) {
   console.log(`Lifting weights repetition ${rep}`);
 }
 */
@@ -449,7 +449,7 @@ if (john.calcBMI() > mark.calcBMI()) {
 const vladArray = [
   "Vlad",
   "Dubceac",
-  2023 - 1990,
+  new Date().getFullYear() - 1990,
   "programmer",
   ["Andrei", "Valeriu", "Vadim"],
   true,
@@ -473,7 +473,7 @@ const years = [1991, 2007, 1969, 2020];
 const ages = [];
 
 for (let i = 0; i < years.length; i++) {
-  ages.push(2023 - years[i]);
+  ages.push(new Date().getFullYear() - years[i]);
 }
 
 console.log(ages);
@@ -496,7 +496,7 @@ for (let i = 0; i < vladArray.length; i++) {
 const vlad = [
   "Vlad",
   "Dubceac",
-  2023 - 1990,
+  new Date().getFullYear() - 1990,
   "programmer",
   ["Andrei", "Valeriu", "Vadim"],
   true,
@@ -521,7 +521,7 @@ for (let exercise = 1; exercise < 4; exercise++) {
 /*
 let rep = 1;
 while (rep <= 10) {
-  // console.log(`WHILE: Lifting weights repetition ${rep}`);
+  console.log(`WHILE: Lifting weights repetition ${rep}`);
   rep++;
 }
 
@@ -558,6 +558,7 @@ HINT: Call calcTip in the loop and use the push method to add values to the tips
 GOOD LUCK 😀
 */
 
+/*
 const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
 const tips = [];
 const totals = [];
@@ -589,3 +590,4 @@ const calcAverage = function (arr) {
 
 console.log(calcAverage(totals));
 console.log(calcAverage(tips));
+*/
