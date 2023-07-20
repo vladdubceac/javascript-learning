@@ -4,7 +4,15 @@
 // PROBLEM:
 // We work for a company building a smart home thermometer.  Our most recent task is this: "Given an array of temperatures of one day, calculate the temperature amplitude. Keep in mind that sometimes there might be a sensor error."
 
-// const temperatures = [3, -2, -6, -1, 'error', 9, 13, 17, 15, 14, 9, 5];
+/*
+const x = '23';
+
+if (x === 23) console.log(23);
+
+const calcAge = birthYear => new Date().getFullYear() - birthYear;
+
+const temperatures = [3, -2, -6, -1, 'error', 9, 13, 17, 15, 14, 9, 5];
+*/
 
 // 1) Understanding the problem
 // - What is temp amplitude ? Answer: difference between highest and lowest temp
@@ -54,6 +62,7 @@ console.log(amplitude);
 /*
 const calcTempAmplitudeNew = function (t1, t2) {
   const temps = t1.concat(t2);
+  console.log(temps);
 
   let max = temps[0];
   let min = temps[0];
@@ -84,8 +93,8 @@ const measureKelvin = function () {
     type: 'temp',
     unit: 'celsius',
     // C) FIX
-    // value: Number(prompt('Degrees celsius:')),
-    value: 10,
+    value: Number(prompt('Degrees celsius:')),
+    // value: 10,
   };
 
   // B) FIND
