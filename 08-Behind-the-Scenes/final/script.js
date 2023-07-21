@@ -36,6 +36,7 @@ const firstName = 'Vlad';
 calcAge(1990);
 */
 
+/*
 // Variables
 console.log(me);
 // console.log(job);
@@ -80,3 +81,37 @@ const z = 3;
 console.log(x === window.x);
 console.log(y === window.y);
 console.log(z === window.z);
+*/
+
+console.log(this);
+
+const calcAge = function (birthYear) {
+  console.log(new Date().getFullYear() - birthYear);
+  console.log(this);
+};
+calcAge(1990);
+
+const calcAgeArrow = birthYear => {
+  console.log(new Date().getFullYear() - birthYear);
+  console.log(this);
+};
+calcAgeArrow(1990);
+
+const vlad = {
+  year: 1990,
+  calcAge: function () {
+    console.log(this);
+    console.log(new Date().getFullYear() - this.year);
+  },
+};
+vlad.calcAge();
+
+const matilda = {
+  year: 2017,
+};
+
+matilda.calcAge = vlad.calcAge;
+matilda.calcAge();
+
+const f = vlad.calcAge;
+f();
