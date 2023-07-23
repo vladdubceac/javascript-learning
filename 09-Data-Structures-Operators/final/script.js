@@ -49,8 +49,7 @@ const restaurant = {
 
 ///////////////////////////
 // Nulish coalescing operator
-
-// restaurant.numGuests = 0;
+restaurant.numGuests = 0;
 const guests2 = restaurant.numGuests || 10;
 console.log(guests2);
 
