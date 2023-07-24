@@ -87,6 +87,42 @@ const game = {
   },
 };
 
+const orderSet = new Set([
+  'Pasta',
+  'Pizza',
+  'Pizza',
+  'Risotto',
+  'Pasta',
+  'Pizza',
+]);
+console.log(orderSet);
+
+console.log(new Set('Jonas'));
+
+console.log(orderSet.size);
+console.log(orderSet.has('Pizza'));
+console.log(orderSet.has('Bread'));
+orderSet.add('Garlic Bread');
+orderSet.add('Garlic Bread');
+orderSet.delete('Risotto');
+// orderSet.clear();
+console.log(orderSet);
+
+for (const order of orderSet) {
+  console.log(order);
+}
+
+// Example
+const staff = ['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter'];
+const staffUnique = [...new Set(staff)];
+console.log(staffUnique);
+console.log(
+  new Set(['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter']).size
+);
+
+console.log(new Set('vladdubceac').size);
+
+/////////////////////////
 // CHALLENGE 2
 /*
 1. Loop over the game.scored array and print each player name to the console,
@@ -110,6 +146,7 @@ Lewandowski: 2
 }
 */
 
+/*
 // 1
 for (const [i, el] of game.scored.entries()) {
   console.log(`Goal ${i + 1}: ${el}`);
@@ -141,6 +178,7 @@ for (const player of game.scored) {
   scorers[player] = scorers[player] + 1 || 1;
 }
 console.log(scorers);
+*/
 
 /*
 ////////////////////////
