@@ -87,6 +87,49 @@ const game = {
   },
 };
 
+const airline = 'TAP Air Moldova';
+const plane = 'A320';
+
+console.log(plane[0]);
+console.log(plane[1]);
+console.log(plane[2]);
+console.log('B737'[0]);
+
+console.log(airline.length);
+console.log('B737'.length);
+
+console.log(airline.indexOf('o'));
+console.log(airline.lastIndexOf('o'));
+console.log(airline.indexOf('Moldova'));
+
+console.log(airline.slice(4));
+console.log(airline.slice(4, 7));
+
+console.log(airline.slice(0, airline.indexOf(' ')));
+console.log(airline.slice(airline.lastIndexOf(' ') + 1));
+
+console.log(airline.slice(-2));
+console.log(airline.slice(1, -1));
+
+const checkMiddleSeat = function (seat) {
+  // B and E are middle seats
+  const s = seat.slice(-1);
+  if (s === 'B' || s === 'E') {
+    console.log('You got the middle seat');
+  } else {
+    console.log('You got lucky');
+  }
+};
+
+checkMiddleSeat('11B');
+checkMiddleSeat('23C');
+checkMiddleSeat('3E');
+
+console.log(new String('vlad'));
+console.log(typeof new String('vlad'));
+
+console.log(typeof new String('vlad').slice(1));
+
 /////////////////////
 // Maps
 /*
@@ -687,6 +730,9 @@ whether it's in the first half or second half (after 45 min) of the game, like t
 [FIRST HALF] 17: ⚽ GOAL
 */
 
+////////////////////////////
+// Coding Challenge #3
+/*
 const gameEvents = new Map([
   [17, '⚽ GOAL'],
   [36, '🔁 Substitution'],
@@ -720,3 +766,4 @@ for (const [min, event] of gameEvents) {
   const half = min <= 45 ? 'FIRST' : 'SECOND';
   console.log(`[${half} HALF] ${min} : ${event}`);
 }
+*/
