@@ -87,6 +87,9 @@ const game = {
   },
 };
 
+/*
+///////////////////////////////
+// Working with String - Part 3
 // Split and join
 console.log('a+very+nice+string'.split('+'));
 console.log('Vlad Dubceac'.split(' '));
@@ -137,6 +140,7 @@ ${'✈'.repeat(n)}`);
 planesInLine(5);
 planesInLine(3);
 planesInLine(12);
+*/
 
 /*
 ///////////////////////////////////////
@@ -881,3 +885,92 @@ for (const [min, event] of gameEvents) {
   console.log(`[${half} HALF] ${min} : ${event}`);
 }
 */
+
+/////////////////////////
+// CHALLENGE #4
+/*
+Write a program that receives a list of variable names written in underscore_case
+and convert them to camelCase.
+The input will come from a textarea inserted into the DOM (see code below to
+insert the elements), and conversion will happen when the button is pressed.
+Test data (pasted to textarea, including spaces):
+ underscore_case
+first_name 
+Some_Variable
+calculate_AGE
+delayed_departure
+Should produce this output (5 separate console.log outputs):
+underscoreCase   ✅
+firstName        ✅✅
+someVariable     ✅✅✅
+calculateAge     ✅✅✅✅
+delayedDeparture ✅✅✅✅✅
+Hints:
+§ Remember which character defines a new line in the textarea 😉
+§ The solution only needs to work for a variable made out of 2 words, like a_b
+§ Start without worrying about the ✅. Tackle that only after you have the variable
+name conversion working 😉
+§ This challenge is difficult on purpose, so start watching the solution in case
+you're stuck. Then pause and continue!
+Afterwards, test with your own test data!
+*/
+
+document.body.append(document.createElement('textarea'));
+document.body.append(document.createElement('button'));
+
+document.querySelector('button').addEventListener('click', function () {
+  const text = document.querySelector('textarea').value;
+  const rows = text.split('\n');
+  console.log(rows);
+
+  let variables = [];
+
+  for (const [i, row] of rows.entries()) {
+    let names1 = row.toLowerCase().trim().split('_');
+    let first = names1[0];
+    let newArray = [...first];
+    for (let i = 1; i < names1.length; i++) {
+      if (names1[i])
+        newArray.push(
+          names1[i].replace(names1[i][0], names1[i][0].toUpperCase())
+        );
+    }
+    const newVariable = newArray.join('');
+    variables.push(newVariable);
+    console.log(`${newVariable.padEnd(20)} ${'✅'.repeat(i + 1)}`);
+  }
+});
+
+var test = function () {
+  const textarea = document.body.getElementsByTagName('textarea')[0];
+  const content = textarea.value;
+  const lines = content.split('\n');
+  const names = [];
+  const newNames = [];
+  for (const line of lines) {
+    names.push(...line.split(' '));
+  }
+
+  for (const name of names) {
+    if (name === ' ' || name === '') {
+      continue;
+    }
+    newNames.push(toCamelCase(name));
+  }
+};
+
+const toCamelCase = function (name) {
+  const parts = name.split('_');
+  const newParts = [];
+  for (let i = 0; i < parts.length; i++) {
+    if (!parts[i] || parts[i] === ' ' || parts[i] === '') {
+      continue;
+    }
+    let newPart = parts[i].toLowerCase();
+    if (i !== 0) {
+      newPart = newPart.replace(newPart[0], newPart[0].toUpperCase());
+    }
+    newParts.push(newPart);
+  }
+  return newParts.join('');
+};
