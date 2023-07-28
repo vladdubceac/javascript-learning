@@ -64,6 +64,8 @@ newPassport(vlad);
 checkIn(flight, vlad);
 */
 
+/*
+// Functions accepting callback functions
 const oneWord = function (str) {
   return str.replace(/ /g, '').toLowerCase();
 };
@@ -122,3 +124,22 @@ biFunction(10, 2, multiplication);
 biFunction(12, 23, division);
 biFunction(12, 0, division);
 biFunction(12, undefined, division);
+*/
+
+// Functions returning functions
+const greet = function (greeting) {
+  return function (name) {
+    console.log(`${greeting}, ${name}`);
+  };
+};
+
+const greeterHey = greet(`Hey`);
+greeterHey('Vlad');
+greeterHey('World');
+
+greet('Hello')('Vlad');
+
+// Challenge
+const greet1 = greeting => name => console.log(`${greeting}, ${name}`);
+
+greet1('Hi')('World');
