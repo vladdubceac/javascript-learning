@@ -282,37 +282,39 @@ GOOD LUCK 😀
 
 */
 
+// CHALLENGE #1 SOLUTION
+/*
 const poll = {
   question: 'What is your favourite programming language?',
   options: ['0: JavaScript', '1: Python', '2: Rust', '3: C++'],
   // This generates [0,0,0,0]
   answers: new Array(4).fill(0),
-  /*registerNewAnswer: function () {
-    let promptMessage = this.question;
-    for (let option of this.options) {
-      const [index, val] = option.split(':');
-      promptMessage += `\n${index} : ${val}`;
-    }
-    promptMessage += '\n(Write option number)';
+  // registerNewAnswer: function () {
+  //   let promptMessage = this.question;
+  //   for (let option of this.options) {
+  //     const [index, val] = option.split(':');
+  //     promptMessage += `\n${index} : ${val}`;
+  //   }
+  //   promptMessage += '\n(Write option number)';
 
-    let availableAnswers = [];
-    for (let option of this.options) {
-      availableAnswers.push(option.slice(0, option.indexOf(':')));
-    }
+  //   let availableAnswers = [];
+  //   for (let option of this.options) {
+  //     availableAnswers.push(option.slice(0, option.indexOf(':')));
+  //   }
 
-    const minAnswer = availableAnswers[0];
-    const maxAnswer = availableAnswers[availableAnswers.length - 1];
+  //   const minAnswer = availableAnswers[0];
+  //   const maxAnswer = availableAnswers[availableAnswers.length - 1];
 
-    let answer;
-    do {
-      answer = Number(prompt(`${promptMessage}`));
-    } while (
-      (!answer && answer !== 0) ||
-      !(answer >= minAnswer && answer <= maxAnswer)
-    );
-    this.answers[answer]++;
-    this.displayResults();
-  },*/
+  //   let answer;
+  //   do {
+  //     answer = Number(prompt(`${promptMessage}`));
+  //   } while (
+  //     (!answer && answer !== 0) ||
+  //     !(answer >= minAnswer && answer <= maxAnswer)
+  //   );
+  //   this.answers[answer]++;
+  //   this.displayResults();
+  // },
   registerNewAnswer() {
     // Get answer
     const answer = Number(
@@ -373,3 +375,26 @@ poll.displayResults.call({ answers: [5, 2, 3] }, 'string');
 poll.displayResults.call({ answers: [5, 2, 3] });
 poll.displayResults.call({ answers: [1, 5, 3, 9, 6, 1] }, 'string');
 poll.displayResults.call({ answers: [1, 5, 3, 9, 6, 1] });
+*/
+
+const runOnce = function () {
+  console.log('This will never run again');
+};
+runOnce();
+
+// IIFE (Immediately Invoked Function Expressions)
+(function () {
+  console.log('This will never run again');
+  const isPrivate = 23;
+})();
+
+// console.log(isPrivate);
+
+(() => console.log('This will ALSO never run again'))();
+
+{
+  const isPrivate = 23;
+  var notPrivate = 46;
+}
+// console.log(isPrivate);
+console.log(notPrivate);
