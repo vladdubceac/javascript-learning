@@ -293,6 +293,7 @@ const poll = {
       const [index, val] = option.split(':');
       promptMessage += `\n${index} : ${val}`;
     }
+    promptMessage += '\n(Write option number)';
 
     let availableAnswers = [];
     for (let option of this.options) {
