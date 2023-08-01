@@ -287,7 +287,7 @@ const poll = {
   options: ['0: JavaScript', '1: Python', '2: Rust', '3: C++'],
   // This generates [0,0,0,0]
   answers: new Array(4).fill(0),
-  registerNewAnswer: function () {
+  /*registerNewAnswer: function () {
     let promptMessage = this.question;
     for (let option of this.options) {
       const [index, val] = option.split(':');
@@ -312,37 +312,64 @@ const poll = {
     );
     this.answers[answer]++;
     this.displayResults();
+  },*/
+  registerNewAnswer() {
+    // Get answer
+    const answer = Number(
+      prompt(
+        `$this.question}\n${this.options.join('\n')}\n(Write option number)`
+      )
+    );
+    console.log(answer);
+    // Register answer
+    typeof answer === 'number' &&
+      answer < this.answers.length &&
+      this.answers[answer]++;
+    this.displayResults();
+    this.displayResults('string');
   },
 
-  displayResults: function (type = 'array') {
-    let output = '';
-    if (type === 'string') {
-      output = 'The results of the poll are ';
-      for (const [index, result] of this.answers.entries()) {
-        output += `${result}${index < this.answers.length - 1 ? ', ' : ''}`;
-      }
-    } else {
-      output = this.answers;
+  // displayResults: function (type = 'array') {
+  //   let output = '';
+  //   if (type === 'string') {
+  //     output = 'The results of the poll are ';
+  //     for (const [index, result] of this.answers.entries()) {
+  //       output += `${result}${index < this.answers.length - 1 ? ', ' : ''}`;
+  //     }
+  //   } else {
+  //     output = this.answers;
+  //   }
+  //   console.log(output);
+  // },
+  displayResults(type = 'array') {
+    if (type === 'array') {
+      console.log(this.answers);
+    } else if (type === 'string') {
+      console.log(`Poll results are ${this.answers.join(', ')}`);
     }
-    console.log(output);
   },
 };
 
 // poll.registerNewAnswer();
 
-const pollRegisterNewAnswer = poll.registerNewAnswer;
-document
-  .querySelector('.poll')
-  .addEventListener('click', pollRegisterNewAnswer.bind(poll));
+// const pollRegisterNewAnswer = poll.registerNewAnswer;
+// document
+//   .querySelector('.poll')
+//   .addEventListener('click', pollRegisterNewAnswer.bind(poll));
 
-const test = {};
-test.answers = [5, 2, 3];
-const testDisplayResults = poll.displayResults.bind(test);
-testDisplayResults();
-testDisplayResults('string');
-testDisplayResults('array');
+// const test = {};
+// test.answers = [5, 2, 3];
+// const testDisplayResults = poll.displayResults.bind(test);
+// testDisplayResults();
+// testDisplayResults('string');
+// testDisplayResults('array');
 
-test.answers = [1, 5, 3, 9, 6, 1];
-testDisplayResults();
-testDisplayResults('string');
-testDisplayResults('array');
+// test.answers = [1, 5, 3, 9, 6, 1];
+// testDisplayResults();
+// testDisplayResults('string');
+// testDisplayResults('array');
+
+poll.displayResults.call({ answers: [5, 2, 3] }, 'string');
+poll.displayResults.call({ answers: [5, 2, 3] });
+poll.displayResults.call({ answers: [1, 5, 3, 9, 6, 1] }, 'string');
+poll.displayResults.call({ answers: [1, 5, 3, 9, 6, 1] });
