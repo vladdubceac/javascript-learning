@@ -212,9 +212,9 @@ const checkDogs = function (dogsJulia, dogsKate) {
   const dogsJuliaNew = dogsJulia.slice();
   dogsJuliaNew.splice(0, 1);
   dogsJuliaNew.splice(-2);
-  console.log('---', dogsJuliaNew);
+
   const allDogs = dogsJuliaNew.concat(dogsKate);
-  console.log(dogsJuliaNew, dogsKate, allDogs);
+
   allDogs.forEach(function (dogAge, i) {
     const type = dogAge >= 3 ? 'an adult' : 'still a puppy 🐶';
     console.log(`Dog number ${i + 1} is ${type}, and is ${dogAge} years old`);
