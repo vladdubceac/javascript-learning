@@ -81,7 +81,7 @@ const displayMovements = function (movements) {
 };
 displayMovements(account1.movements);
 
-console.log(containerMovements.innerHTML);
+// console.log(containerMovements.innerHTML);
 
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
@@ -206,3 +206,25 @@ TEST DATA 2: Julia's data [9, 16, 6, 8, 3], Kate's data [10, 5, 6, 1, 4]
 
 GOOD LUCK 😀
 */
+
+const checkDogs = function (dogsJulia, dogsKate) {
+  // const dogsJuliaNew = dogsJulia.slice(1).slice(0, -2);
+  const dogsJuliaNew = dogsJulia.slice();
+  dogsJuliaNew.splice(0, 1);
+  dogsJuliaNew.splice(-2);
+  console.log('---', dogsJuliaNew);
+  const allDogs = dogsJuliaNew.concat(dogsKate);
+  console.log(dogsJuliaNew, dogsKate, allDogs);
+  allDogs.forEach(function (dogAge, i) {
+    const type = dogAge >= 3 ? 'an adult' : 'still a puppy 🐶';
+    console.log(`Dog number ${i + 1} is ${type}, and is ${dogAge} years old`);
+  });
+};
+
+let juliaData = [3, 5, 2, 12, 7];
+let kateData = [4, 1, 15, 8, 3];
+checkDogs(juliaData, kateData);
+
+juliaData = [9, 16, 6, 8, 3];
+kateData = [10, 5, 6, 1, 4];
+checkDogs(juliaData, kateData);
