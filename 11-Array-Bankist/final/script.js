@@ -87,7 +87,7 @@ displayMovements(account1.movements);
 /////////////////////////////////////////////////
 // LECTURES
 
-// const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
 /*
@@ -207,6 +207,7 @@ TEST DATA 2: Julia's data [9, 16, 6, 8, 3], Kate's data [10, 5, 6, 1, 4]
 GOOD LUCK 😀
 */
 
+/*
 const checkDogs = function (dogsJulia, dogsKate) {
   // const dogsJuliaNew = dogsJulia.slice(1).slice(0, -2);
   const dogsJuliaNew = dogsJulia.slice();
@@ -228,3 +229,26 @@ checkDogs(juliaData, kateData);
 juliaData = [9, 16, 6, 8, 3];
 kateData = [10, 5, 6, 1, 4];
 checkDogs(juliaData, kateData);
+*/
+
+const eurToUsd = 1.1;
+
+// const movementsUSD = movements.map(function (mov) {
+//   return mov * eurToUsd;
+// });
+const movementsUSD = movements.map(mov => mov * eurToUsd);
+
+console.log(movements);
+console.log(movementsUSD);
+
+let movementsUSDfor = [];
+for (const mov of movements) {
+  movementsUSDfor.push(mov * eurToUsd);
+}
+console.log(movementsUSDfor);
+
+const movementsDescriptions = movements.map(
+  (mov, i) =>
+    `Movement ${i + 1} : ${mov > 0 ? 'deposited' : 'withdrew'} ${Math.abs(mov)}`
+);
+console.log(movementsDescriptions);
