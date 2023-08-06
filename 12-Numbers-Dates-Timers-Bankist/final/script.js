@@ -86,7 +86,6 @@ const formatMovementDate = function (date, locale) {
     Math.round(Math.abs((date1 - date2) / (1000 * 60 * 60 * 24)));
 
   const daysPassed = calcDaysPassed(new Date(), date);
-  console.log(daysPassed);
   if (daysPassed === 0) {
     return 'Today';
   }
@@ -522,6 +521,8 @@ future.setFullYear(2040);
 console.log(future);
 */
 
+// Operations with dates
+/*
 const future = new Date(2037, 10, 19, 15, 23);
 console.log(+future);
 
@@ -530,3 +531,4 @@ const calcDaysPassed = (date1, date2) =>
 
 const days1 = calcDaysPassed(new Date(2037, 3, 4), new Date(2037, 3, 14));
 console.log(days1);
+*/
