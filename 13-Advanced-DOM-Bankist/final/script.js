@@ -233,9 +233,9 @@ const btnRight = document.querySelector(".slider__btn--right");
 let curSlide = 0;
 const maxSlide = slides.length;
 
-const slider = document.querySelector(".slider");
-slider.style.transform = "scale(0.4) translateX(-800px)";
-slider.style.overflow = "visible";
+// const slider = document.querySelector(".slider");
+// slider.style.transform = "scale(0.4) translateX(-800px)";
+// slider.style.overflow = "visible";
 
 const goToSlide = function (slide) {
   slides.forEach(
@@ -247,7 +247,7 @@ goToSlide(0);
 
 // Next slide
 const nextSlide = function () {
-  if (curSlide === slides.length - 1) {
+  if (curSlide === maxSlide - 1) {
     curSlide = 0;
   } else {
     curSlide++;
@@ -259,7 +259,7 @@ const nextSlide = function () {
 // Previous slide
 const prevSlide = function () {
   if (curSlide === 0) {
-    curSlide = slides.length - 1;
+    curSlide = maxSlide - 1;
   } else {
     curSlide--;
   }
