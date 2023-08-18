@@ -485,11 +485,11 @@ console.log(h1.parentElement.children);
 */
 
 document.addEventListener("DOMContentLoaded", function (e) {
-  console.log("HTML Parsed and DOM tree built!", e);
+  // console.log("HTML Parsed and DOM tree built!", e);
 });
 
 window.addEventListener("load", function (e) {
-  console.log("Page fully loaded", e);
+  // console.log("Page fully loaded", e);
 });
 
 // window.addEventListener("beforeunload", function (e) {
