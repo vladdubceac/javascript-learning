@@ -1,5 +1,7 @@
 'use strict';
 
+////////////////////////
+// Constructor Functions and the new Operator
 const Person = function (firstName, birthYear) {
   // Instance properties
   this.firstName = firstName;
@@ -24,6 +26,13 @@ const jack = new Person('Jack', 1975);
 console.log(matilda, jack);
 
 console.log(vlad instanceof Person);
+
+Person.hey = function () {
+  console.log('Hey there');
+  console.log(this);
+};
+
+Person.hey();
 
 // Prototypes
 console.log(Person.prototype);
@@ -199,6 +208,12 @@ class PersonCl {
   get fullName() {
     return this._fullName;
   }
+
+  // Static method
+  static hey() {
+    console.log('Hey there');
+    console.log(this);
+  }
 }
 
 const jessica = new PersonCl('Jessica Davis', 1996);
@@ -219,6 +234,11 @@ jessica.greet();
 
 const walter = new PersonCl('Walter White', 1965);
 
+PersonCl.hey();
+
+/*
+/////////////////////////////////
+// Setters and Getters
 const account = {
   owner: 'vlad',
   movemements: [200, 530, 120, 300],
@@ -236,3 +256,4 @@ console.log(account.latest);
 
 account.latest = 50;
 console.log(account.movemements);
+*/
