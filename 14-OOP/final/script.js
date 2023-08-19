@@ -6,9 +6,9 @@ const Person = function (firstName, birthYear) {
   this.birthYear;
 
   // Never do this
-  this.calcAge = function () {
-    2037 - this.birthYear;
-  };
+  //   this.calcAge = function () {
+  //     2037 - this.birthYear;
+  //   };
 };
 
 const vlad = new Person('Vlad', 1990);
