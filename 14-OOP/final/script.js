@@ -584,7 +584,7 @@ jay.calcAge();
 // Private fields
 // Public methods
 // Private methods
-// (there is also static versions)
+// (there is also a static version)
 class Account {
   // 1) Public fields (instances)
   locale = navigator.language;
@@ -629,6 +629,11 @@ class Account {
   // 4) Private methods
   #approveLoan(val) {
     return true;
+  }
+
+  // Static
+  static helper() {
+    console.log(`Helper method`);
   }
 }
 
