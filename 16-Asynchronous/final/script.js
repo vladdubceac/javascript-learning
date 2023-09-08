@@ -41,6 +41,9 @@ getCountryData('portugal');
 getCountryData('germany');
 */
 
+////////////////////////////////////
+// Welcome to Callback hell
+
 const renderCountry = function (data, className = '') {
   const html = `<article class="country ${className}">
           <img class="country__img" src="${data.flags.svg}" />
@@ -63,6 +66,7 @@ const renderCountry = function (data, className = '') {
   countriesContainer.style.opacity = 1;
 };
 
+/*
 const getCountryAndNeighbour = function (countryName) {
   // AJAX call country 1
   const request = new XMLHttpRequest();
@@ -111,3 +115,41 @@ setTimeout(() => {
     }, 1000);
   }, 1000);
 }, 1000);
+*/
+
+//  const request = new XMLHttpRequest();
+//  request.open('GET', `https://restcountries.com/v3.1/name/${countryName}`);
+//  request.send();
+
+// const request = fetch('https://restcountries.com/v3.1/name/moldova');
+// console.log(request);
+
+// const getCountryData = function (country) {
+//   fetch(`https://restcountries.com/v3.1/name//${country}`)
+//     .then(function (response) {
+//       console.log(response);
+//       return response.json();
+//     })
+//     .then(function (data) {
+//       console.log(data);
+//       renderCountry(data[0]);
+//     });
+// };
+
+const getCountryData = function (country) {
+  // Country 1
+  fetch(`https://restcountries.com/v3.1/name//${country}`)
+    .then(response => response.json())
+    .then(data => {
+      renderCountry(data[0]);
+      const neighbours = data[0].borders;
+      if (!neighbours) return;
+
+      // Country 2
+      return fetch(`https://restcountries.com/v3.1/alpha/${neighbours[0]}`);
+    })
+    .then(response => response.json())
+    .then(data => renderCountry(data[0], 'neighbour'));
+};
+
+getCountryData('moldova');
