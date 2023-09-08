@@ -6,10 +6,11 @@ const countriesContainer = document.querySelector('.countries');
 ///////////////////////////////////////
 
 const renderCountry = function (data, className = '') {
+  console.log(data);
   const html = `<article class="country ${className}">
           <img class="country__img" src="${data.flags.svg}" />
           <div class="country__data">
-            <h3 class="country__name">${data.name.official}</h3>
+            <h3 class="country__name">${data.name.common}</h3>
             <h4 class="country__region">${data.region}</h4>
             <p class="country__row"><span>👫</span>${(
               +data.population / 1000000
@@ -141,19 +142,69 @@ setTimeout(() => {
 //     });
 // };
 
+const getJSON = function (url, errorMsg = 'Something went wrong') {
+  return fetch(url).then(response => {
+    if (!response.ok) throw new Error(`${errorMsg} ${response.status}`);
+
+    return response.json();
+  });
+};
+
+// const getCountryData = function (country) {
+//   // Country 1
+//   fetch(`https://restcountries.com/v3.1/name//${country}`)
+//     .then(response => {
+//       console.log(response);
+
+//       if (!response.ok) throw new Error(`Country not found ${response.status}`);
+
+//       return response.json();
+//     })
+//     .then(data => {
+//       renderCountry(data[0]);
+//       const neighbours = data[0].borders;
+//       if (!neighbours) return;
+
+//       // const neighbour = neighbours[0];
+//       const neighbour = 'dfsdfdef';
+
+//       // Country 2
+//       return fetch(`https://restcountries.com/v3.1/alpha/${neighbour}`);
+//     })
+//     .then(response => {
+//       if (!response.ok)
+//         throw new Error(`Country not found (${response.status})`);
+//       response.json();
+//     })
+//     .then(data => renderCountry(data[0], 'neighbour'))
+//     .catch(err => {
+//       console.log(`${err} 💥💥💥`);
+//       renderError(`Something went wrong 💥💥 ${err.message}. Try again!`);
+//     })
+//     .finally(() => {
+//       countriesContainer.style.opacity = 1;
+//     });
+// };
+
 const getCountryData = function (country) {
   // Country 1
-  fetch(`https://restcountries.com/v3.1/name//${country}`)
-    .then(response => response.json())
+  getJSON(
+    `https://restcountries.com/v3.1/name//${country}`,
+    'Country not found'
+  )
     .then(data => {
       renderCountry(data[0]);
       const neighbours = data[0].borders;
-      if (!neighbours) return;
+      if (!neighbours) throw new Error('No neighbour found!');
+
+      const neighbour = neighbours[0];
 
       // Country 2
-      return fetch(`https://restcountries.com/v3.1/alpha/${neighbours[0]}`);
+      return getJSON(
+        `https://restcountries.com/v3.1/alpha/${neighbour}`,
+        'Country not found'
+      );
     })
-    .then(response => response.json())
     .then(data => renderCountry(data[0], 'neighbour'))
     .catch(err => {
       console.log(`${err} 💥💥💥`);
@@ -168,4 +219,4 @@ btn.addEventListener('click', function () {
   getCountryData('moldova');
 });
 
-getCountryData('dsfddsfsdf');
+// getCountryData('dsfddsfsdf');
