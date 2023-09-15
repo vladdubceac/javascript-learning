@@ -7,13 +7,13 @@ const countriesContainer = document.querySelector('.countries');
 
 const getPopulationText = function (population) {
   let result;
-  // if (population < 1000) {
-  //   result = `${population}`;
-  // } else if (population < 1_000_000) {
-  //   result = `${(+population / 1000).toFixed(1)} thousand `;
-  // } else {
-  result = `${(+population / 1_000_000).toFixed(1)} million `;
-  // }
+  if (population < 1000) {
+    result = `${population}`;
+  } else if (population < 1_000_000) {
+    result = `${(+population / 1000).toFixed(2)} thousand `;
+  } else {
+    result = `${(+population / 1_000_000).toFixed(2)} million `;
+  }
   result += ` people`;
   return result;
 };
