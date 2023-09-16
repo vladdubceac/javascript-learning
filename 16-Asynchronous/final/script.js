@@ -228,9 +228,9 @@ const getCountryData = function (country) {
     });
 };
 
-btn.addEventListener('click', function () {
-  getCountryData('moldova');
-});
+// btn.addEventListener('click', function () {
+//   getCountryData('moldova');
+// });
 
 // getCountryData('dsfddsfsdf');
 
@@ -259,7 +259,7 @@ GOOD LUCK 😀
 */
 
 // CHALLENGE #1
-
+/*
 const whereAmI = function (lat, long) {
   fetch(` https://geocode.xyz/${lat},${long}?geoit=json`)
     .then(res => {
@@ -284,9 +284,10 @@ const whereAmI = function (lat, long) {
       countriesContainer.style.opacity = 1;
     });
 };
+*/
 
 // whereAmI(52.508, 13.381);
-whereAmI(19.037, 72.873);
+// whereAmI(19.037, 72.873);
 // whereAmI(-33.933, 18.474);
 
 /*
@@ -358,3 +359,46 @@ wait(1)
 Promise.resolve('abc').then(x => console.log(x));
 Promise.reject(new Error('Problem')).catch(x => console.error(x));
 */
+
+const getPosition = function () {
+  return new Promise(function (resolve, reject) {
+    // navigator.geolocation.getCurrentPosition(
+    //   position => resolve(position),
+    //   err => reject(err)
+    // );
+    navigator.geolocation.getCurrentPosition(resolve, reject);
+  });
+};
+
+// getPosition().then(pos => console.log(pos));
+
+const whereAmI = function () {
+  getPosition()
+    .then(pos => {
+      const { latitude: lat, longitude: lng } = pos.coords;
+
+      return fetch(` https://geocode.xyz/${lat},${lng}?geoit=json`);
+    })
+    .then(res => {
+      if (!res.ok)
+        throw new Error(
+          `Problem with geocoding ${res.status} - ${res.statusText}`
+        );
+      return res.json();
+    })
+    .then(data => {
+      console.log(`You are in ${data.city}, ${data.country}`);
+      return fetch(`https://restcountries.com/v3.1/name//${data.country}`);
+    })
+    .then(res1 => {
+      if (!res1.ok) throw new Error(`Country not found (${res1.status})`);
+      return res1.json();
+    })
+    .then(data => renderCountry(data[0]))
+    .catch(err => console.error(err.message))
+    .finally(() => {
+      countriesContainer.style.opacity = 1;
+    });
+};
+
+btn.addEventListener('click', whereAmI);
