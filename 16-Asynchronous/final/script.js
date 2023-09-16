@@ -259,7 +259,7 @@ GOOD LUCK 😀
 */
 
 // CHALLENGE #1
-/*
+
 const whereAmI = function (lat, long) {
   fetch(` https://geocode.xyz/${lat},${long}?geoit=json`)
     .then(res => {
@@ -279,15 +279,14 @@ const whereAmI = function (lat, long) {
       return res1.json();
     })
     .then(data => renderCountry(data[0]))
-    .catch(err => console.err(err.message))
+    .catch(err => console.log(err.message))
     .finally(() => {
       countriesContainer.style.opacity = 1;
     });
 };
-*/
 
 // whereAmI(52.508, 13.381);
-// whereAmI(19.037, 72.873);
+whereAmI(19.037, 72.873);
 // whereAmI(-33.933, 18.474);
 
 /*
@@ -302,6 +301,7 @@ Promise.resolve('Resolve promise 2').then(res => {
 console.log('Test end');
 */
 
+/*
 const lotteryPromise = new Promise(function (resolve, reject) {
   console.log('Lottery draw is happening 🔮');
   setTimeout(function () {
@@ -339,6 +339,7 @@ wait(1)
     console.log('4 seconds passed');
     wait(1);
   });
+  */
 
 // setTimeout(() => {
 //   console.log('1 second passed');
@@ -353,5 +354,7 @@ wait(1)
 //   }, 1000);
 // }, 1000);
 
+/*
 Promise.resolve('abc').then(x => console.log(x));
 Promise.reject(new Error('Problem')).catch(x => console.error(x));
+*/
