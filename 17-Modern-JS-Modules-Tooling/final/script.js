@@ -13,14 +13,16 @@
 
 // import add, { addToCart, totalPrice as price, tq } from './shoppingCart.js';
 
-/*
-import add, { cart } from './shoppingCart.js';
-add('pizza', 2);
-add('bread', 5);
-add('apples', 4);
+import add, { cart } from "./shoppingCart.js";
+add("pizza", 2);
+add("bread", 5);
+add("apples", 4);
 
 console.log(cart);
 
+/*
+////////////////////////
+// The Module pattern
 // console.log('Start fetching');
 // const res = await fetch(`https://jsonplaceholder.typicode.com/posts`);
 // const data = await res.json();
@@ -76,12 +78,15 @@ console.log(ShoppingCart2);
 console.log(ShoppingCart2.shippingCost);
 */
 
-import cloneDeep from './node_modules/lodash-es/cloneDeep.js';
+///////////////////////////
+// Introduction to NP
+// import cloneDeep from "./node_modules/lodash-es/cloneDeep.js";
+import cloneDeep from "lodash-es";
 
 const state = {
   cart: [
-    { product: 'bread', quantity: 5 },
-    { product: 'pizza', quantity: 5 },
+    { product: "bread", quantity: 5 },
+    { product: "pizza", quantity: 5 },
   ],
   user: { loggedIn: true },
 };
@@ -92,3 +97,7 @@ state.user.loggedIn = false;
 console.log(stateClone);
 
 console.log(stateDeepClone);
+
+if (module.hot) {
+  module.hot.accept();
+}
