@@ -13,10 +13,10 @@
 
 // import add, { addToCart, totalPrice as price, tq } from './shoppingCart.js';
 
-import add, { cart } from "./shoppingCart.js";
-add("pizza", 2);
-add("bread", 5);
-add("apples", 4);
+import add, { cart } from './shoppingCart.js';
+add('pizza', 2);
+add('bread', 5);
+add('apples', 4);
 
 console.log(cart);
 
@@ -81,12 +81,12 @@ console.log(ShoppingCart2.shippingCost);
 ///////////////////////////
 // Introduction to NP
 // import cloneDeep from "./node_modules/lodash-es/cloneDeep.js";
-import cloneDeep from "lodash-es";
+import cloneDeep from 'lodash-es';
 
 const state = {
   cart: [
-    { product: "bread", quantity: 5 },
-    { product: "pizza", quantity: 5 },
+    { product: 'bread', quantity: 5 },
+    { product: 'pizza', quantity: 5 },
   ],
   user: { loggedIn: true },
 };
